@@ -1,0 +1,360 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B06B3530-DA06-47C8-A68E-8F3BCA4A938D}|WildcardEngine.vcxproj|C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\TextureLoader.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B06B3530-DA06-47C8-A68E-8F3BCA4A938D}|WildcardEngine.vcxproj|solutionrelative:TextureLoader.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B06B3530-DA06-47C8-A68E-8F3BCA4A938D}|WildcardEngine.vcxproj|C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B06B3530-DA06-47C8-A68E-8F3BCA4A938D}|WildcardEngine.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B06B3530-DA06-47C8-A68E-8F3BCA4A938D}|WildcardEngine.vcxproj|C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\TextureLoader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B06B3530-DA06-47C8-A68E-8F3BCA4A938D}|WildcardEngine.vcxproj|solutionrelative:TextureLoader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B06B3530-DA06-47C8-A68E-8F3BCA4A938D}|WildcardEngine.vcxproj|C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\Geometry.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B06B3530-DA06-47C8-A68E-8F3BCA4A938D}|WildcardEngine.vcxproj|solutionrelative:Geometry.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B06B3530-DA06-47C8-A68E-8F3BCA4A938D}|WildcardEngine.vcxproj|C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\glad.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B06B3530-DA06-47C8-A68E-8F3BCA4A938D}|WildcardEngine.vcxproj|solutionrelative:glad.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B06B3530-DA06-47C8-A68E-8F3BCA4A938D}|WildcardEngine.vcxproj|C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\shader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B06B3530-DA06-47C8-A68E-8F3BCA4A938D}|WildcardEngine.vcxproj|solutionrelative:shader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B06B3530-DA06-47C8-A68E-8F3BCA4A938D}|WildcardEngine.vcxproj|C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\Renderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B06B3530-DA06-47C8-A68E-8F3BCA4A938D}|WildcardEngine.vcxproj|solutionrelative:Renderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B06B3530-DA06-47C8-A68E-8F3BCA4A938D}|WildcardEngine.vcxproj|C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\fragmentShader.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}",
+      "RelativeMoniker": "D:0:0:{B06B3530-DA06-47C8-A68E-8F3BCA4A938D}|WildcardEngine.vcxproj|solutionrelative:fragmentShader.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B06B3530-DA06-47C8-A68E-8F3BCA4A938D}|WildcardEngine.vcxproj|C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\Geometry.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B06B3530-DA06-47C8-A68E-8F3BCA4A938D}|WildcardEngine.vcxproj|solutionrelative:Geometry.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B06B3530-DA06-47C8-A68E-8F3BCA4A938D}|WildcardEngine.vcxproj|C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\crtShader.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}",
+      "RelativeMoniker": "D:0:0:{B06B3530-DA06-47C8-A68E-8F3BCA4A938D}|WildcardEngine.vcxproj|solutionrelative:crtShader.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B06B3530-DA06-47C8-A68E-8F3BCA4A938D}|WildcardEngine.vcxproj|C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\Renderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B06B3530-DA06-47C8-A68E-8F3BCA4A938D}|WildcardEngine.vcxproj|solutionrelative:Renderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B06B3530-DA06-47C8-A68E-8F3BCA4A938D}|WildcardEngine.vcxproj|C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\Application.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B06B3530-DA06-47C8-A68E-8F3BCA4A938D}|WildcardEngine.vcxproj|solutionrelative:Application.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B06B3530-DA06-47C8-A68E-8F3BCA4A938D}|WildcardEngine.vcxproj|C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\Application.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B06B3530-DA06-47C8-A68E-8F3BCA4A938D}|WildcardEngine.vcxproj|solutionrelative:Application.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B06B3530-DA06-47C8-A68E-8F3BCA4A938D}|WildcardEngine.vcxproj|C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\Input.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B06B3530-DA06-47C8-A68E-8F3BCA4A938D}|WildcardEngine.vcxproj|solutionrelative:Input.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B06B3530-DA06-47C8-A68E-8F3BCA4A938D}|WildcardEngine.vcxproj|C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\Input.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B06B3530-DA06-47C8-A68E-8F3BCA4A938D}|WildcardEngine.vcxproj|solutionrelative:Input.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B06B3530-DA06-47C8-A68E-8F3BCA4A938D}|WildcardEngine.vcxproj|C:\\USERS\\INDRA.BOWEN-PAOLI\\SOURCE\\REPOS\\WILDCARDENGINE\\DEPENDENCIES\\INCLUDE\\GLAD\\GLAD.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B06B3530-DA06-47C8-A68E-8F3BCA4A938D}|WildcardEngine.vcxproj|solutionrelative:DEPENDENCIES\\INCLUDE\\GLAD\\GLAD.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B06B3530-DA06-47C8-A68E-8F3BCA4A938D}|WildcardEngine.vcxproj|C:\\USERS\\INDRA.BOWEN-PAOLI\\SOURCE\\REPOS\\WILDCARDENGINE\\DEPENDENCIES\\INCLUDE\\STB\\STB_IMAGE.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B06B3530-DA06-47C8-A68E-8F3BCA4A938D}|WildcardEngine.vcxproj|solutionrelative:DEPENDENCIES\\INCLUDE\\STB\\STB_IMAGE.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B06B3530-DA06-47C8-A68E-8F3BCA4A938D}|WildcardEngine.vcxproj|C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\stb_image.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B06B3530-DA06-47C8-A68E-8F3BCA4A938D}|WildcardEngine.vcxproj|solutionrelative:stb_image.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B06B3530-DA06-47C8-A68E-8F3BCA4A938D}|WildcardEngine.vcxproj|C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\vertexShader.vs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B06B3530-DA06-47C8-A68E-8F3BCA4A938D}|WildcardEngine.vcxproj|solutionrelative:vertexShader.vs||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B06B3530-DA06-47C8-A68E-8F3BCA4A938D}|WildcardEngine.vcxproj|C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\screenShader.vs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B06B3530-DA06-47C8-A68E-8F3BCA4A938D}|WildcardEngine.vcxproj|solutionrelative:screenShader.vs||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 12,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Geometry.h",
+              "DocumentMoniker": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\Geometry.h",
+              "RelativeDocumentMoniker": "Geometry.h",
+              "ToolTip": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\Geometry.h",
+              "RelativeToolTip": "Geometry.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-04T13:12:57.409Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TextureLoader.h",
+              "DocumentMoniker": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\TextureLoader.h",
+              "RelativeDocumentMoniker": "TextureLoader.h",
+              "ToolTip": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\TextureLoader.h",
+              "RelativeToolTip": "TextureLoader.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-04T13:14:02.372Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\main.cpp",
+              "RelativeDocumentMoniker": "main.cpp",
+              "ToolTip": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\main.cpp",
+              "RelativeToolTip": "main.cpp",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAEgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-10-27T12:28:02.305Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "shader.h",
+              "DocumentMoniker": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\shader.h",
+              "RelativeDocumentMoniker": "shader.h",
+              "ToolTip": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\shader.h",
+              "RelativeToolTip": "shader.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADoAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-04T12:08:10.87Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Application.h",
+              "DocumentMoniker": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\Application.h",
+              "RelativeDocumentMoniker": "Application.h",
+              "ToolTip": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\Application.h",
+              "RelativeToolTip": "Application.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-04T12:40:04.474Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Renderer.h",
+              "DocumentMoniker": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\Renderer.h",
+              "RelativeDocumentMoniker": "Renderer.h",
+              "ToolTip": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\Renderer.h",
+              "RelativeToolTip": "Renderer.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-04T12:53:36.201Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "crtShader.fs",
+              "DocumentMoniker": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\crtShader.fs",
+              "RelativeDocumentMoniker": "crtShader.fs",
+              "ToolTip": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\crtShader.fs",
+              "RelativeToolTip": "crtShader.fs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-04T12:23:52.6Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Renderer.cpp",
+              "DocumentMoniker": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\Renderer.cpp",
+              "RelativeDocumentMoniker": "Renderer.cpp",
+              "ToolTip": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\Renderer.cpp",
+              "RelativeToolTip": "Renderer.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-04T13:00:23.171Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Application.cpp",
+              "DocumentMoniker": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\Application.cpp",
+              "RelativeDocumentMoniker": "Application.cpp",
+              "ToolTip": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\Application.cpp",
+              "RelativeToolTip": "Application.cpp",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-04T12:45:52.785Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Input.cpp",
+              "DocumentMoniker": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\Input.cpp",
+              "RelativeDocumentMoniker": "Input.cpp",
+              "ToolTip": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\Input.cpp",
+              "RelativeToolTip": "Input.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-04T13:11:14.723Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Input.h",
+              "DocumentMoniker": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\Input.h",
+              "RelativeDocumentMoniker": "Input.h",
+              "ToolTip": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\Input.h",
+              "RelativeToolTip": "Input.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-04T13:10:54.104Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "glad.c",
+              "DocumentMoniker": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\glad.c",
+              "RelativeDocumentMoniker": "glad.c",
+              "ToolTip": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\glad.c",
+              "RelativeToolTip": "glad.c",
+              "ViewState": "AgIAABsBAAAAAAAAAAAWwC8BAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-10-27T13:23:29.921Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TextureLoader.cpp",
+              "DocumentMoniker": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\TextureLoader.cpp",
+              "RelativeDocumentMoniker": "TextureLoader.cpp",
+              "ToolTip": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\TextureLoader.cpp",
+              "RelativeToolTip": "TextureLoader.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-04T13:14:17.728Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "fragmentShader.fs",
+              "DocumentMoniker": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\fragmentShader.fs",
+              "RelativeDocumentMoniker": "fragmentShader.fs",
+              "ToolTip": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\fragmentShader.fs",
+              "RelativeToolTip": "fragmentShader.fs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-04T12:23:05.382Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Geometry.cpp",
+              "DocumentMoniker": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\Geometry.cpp",
+              "RelativeDocumentMoniker": "Geometry.cpp",
+              "ToolTip": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\Geometry.cpp",
+              "RelativeToolTip": "Geometry.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-04T13:13:40.338Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "glad.h",
+              "DocumentMoniker": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\Dependencies\\include\\glad\\glad.h",
+              "RelativeDocumentMoniker": "Dependencies\\include\\glad\\glad.h",
+              "ToolTip": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\Dependencies\\include\\glad\\glad.h",
+              "RelativeToolTip": "Dependencies\\include\\glad\\glad.h",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAswBoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-04T13:20:54.052Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "screenShader.vs",
+              "DocumentMoniker": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\screenShader.vs",
+              "RelativeDocumentMoniker": "screenShader.vs",
+              "ToolTip": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\screenShader.vs",
+              "RelativeToolTip": "screenShader.vs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-04T12:24:06.454Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "vertexShader.vs",
+              "DocumentMoniker": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\vertexShader.vs",
+              "RelativeDocumentMoniker": "vertexShader.vs",
+              "ToolTip": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\vertexShader.vs",
+              "RelativeToolTip": "vertexShader.vs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-04T12:22:42.451Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "stb_image.cpp",
+              "DocumentMoniker": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\stb_image.cpp",
+              "RelativeDocumentMoniker": "stb_image.cpp",
+              "ToolTip": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\stb_image.cpp",
+              "RelativeToolTip": "stb_image.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-04T12:08:33.758Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "stb_image.h",
+              "DocumentMoniker": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\Dependencies\\include\\stb\\stb_image.h",
+              "RelativeDocumentMoniker": "Dependencies\\include\\stb\\stb_image.h",
+              "ToolTip": "C:\\Users\\Indra.Bowen-Paoli\\source\\repos\\WildcardEngine\\Dependencies\\include\\stb\\stb_image.h",
+              "RelativeToolTip": "Dependencies\\include\\stb\\stb_image.h",
+              "ViewState": "AgIAAB0bAAAAAAAAAAAswDIbAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-04T12:27:09.368Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

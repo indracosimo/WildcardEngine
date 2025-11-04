@@ -200,7 +200,7 @@ vec3 BlendNeighbors(vec2 pos)
     float glowRadius = 3.0;
     for(float i = -glowRadius; i <= glowRadius; i += 1.0)
     {
-        for(float j = -glowRadius; j <= glowRadius; j += 1,0)
+        for(float j = -glowRadius; j <= glowRadius; j += 1.0)
         {
             vec2 offset = vec2(i, j) * pixelSize;
             float weight = 1.0 - length(offset) / (glowRadius * length(pixelSize));

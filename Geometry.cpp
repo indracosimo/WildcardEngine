@@ -1,6 +1,7 @@
 #include "Geometry.h"
 
-static float cubeVertices[] = {
+static float cubeVertices[] = 
+{
     // positions          // texture coords   // colors
     -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,        1.0f, 0.0f, 0.0f,
      0.5f, -0.5f, -0.5f,  1.0f, 0.0f,        0.0f, 1.0f, 0.0f,
@@ -45,7 +46,8 @@ static float cubeVertices[] = {
     -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,        0.0f, 1.0f, 0.0f
 };
 
-static float quadVertices[] = {
+static float quadVertices[] = 
+{
     // positions   // texCoords
     -1.0f,  1.0f,  0.0f, 1.0f,
     -1.0f, -1.0f,  0.0f, 0.0f,

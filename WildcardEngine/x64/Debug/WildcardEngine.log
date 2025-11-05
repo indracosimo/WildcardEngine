@@ -1,11 +1,2 @@
 ﻿  Application.cpp
-C:\Users\Indra.Bowen-Paoli\source\repos\WildcardEngine\shader.h(41,34): warning C4101: 'e': unreferenced local variable
-  (compiling source file 'Application.cpp')
-  
-  Renderer.cpp
-C:\Users\Indra.Bowen-Paoli\source\repos\WildcardEngine\shader.h(41,34): warning C4101: 'e': unreferenced local variable
-  (compiling source file 'Renderer.cpp')
-  
-C:\Users\Indra.Bowen-Paoli\source\repos\WildcardEngine\Renderer.cpp(142,49): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  Generating Code...
   WildcardEngine.vcxproj -> C:\Users\Indra.Bowen-Paoli\source\repos\WildcardEngine\x64\Debug\WildcardEngine.exe

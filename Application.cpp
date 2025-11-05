@@ -1,3 +1,6 @@
+#include "imgui.h"
+#include "imgui_impl_glfw.h"
+#include "imgui_impl_opengl3.h"
 #include <glad/glad.h>
 #include "Application.h"
 #include "Renderer.h"
@@ -53,14 +56,46 @@ void Application::setupCallbacks()
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 }
 
+
 void Application::Run()
 {
     Renderer renderer(SCR_WIDTH, SCR_HEIGHT);
+
+    //ImGUI setup
+    IMGUI_CHECKVERSION();
+    ImGui::CreateContext();
+    ImGuiIO& io = ImGui::GetIO(); (void)io;
+    ImGui::StyleColorsDark();
+    ImGui_ImplGlfw_InitForOpenGL(window, true);
+    ImGui_ImplOpenGL3_Init("#version 330");
+
+	bool bDrawTriangle = true;
+
     while (!glfwWindowShouldClose(window)) 
     {
         processInput(window);
+
+		ImGui_ImplOpenGL3_NewFrame();
+		ImGui_ImplGlfw_NewFrame();
+		ImGui::NewFrame();
+
+        if (bDrawTriangle) glDrawArrays(GL_TRIANGLES, 0, 3);
+        ImGui::Begin("Did it work?");
+        ImGui::Text("Hello, ImGui!");
+		ImGui::Checkbox("Demo Window", &bDrawTriangle);
+        ImGui::End();
+      
 		renderer.render();
+
+        ImGui::Render();
+        ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+
         glfwSwapBuffers(window);
 		glfwPollEvents();
+
     }
+
+	ImGui_ImplOpenGL3_Shutdown();
+	ImGui_ImplGlfw_Shutdown();
+    ImGui:: DestroyContext();
 }

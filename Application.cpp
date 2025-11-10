@@ -1,3 +1,4 @@
+#define GLM_ENABLE_EXPERIMENTAL
 #include "imgui.h"
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
@@ -6,6 +7,8 @@
 #include "Renderer.h"
 #include "Input.h"
 #include <iostream>
+#include "Camera.h"
+
 
 Application::Application(int width, int height, const char* title)
     : SCR_WIDTH(width), SCR_HEIGHT(height), window(nullptr)
@@ -59,32 +62,42 @@ void Application::setupCallbacks()
 
 void Application::Run()
 {
+    Camera camera(SCR_WIDTH, SCR_HEIGHT, glm::vec3(0.0f, 0.0f, 2.0f));
     Renderer renderer(SCR_WIDTH, SCR_HEIGHT);
-
     //ImGUI setup
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
-    ImGuiIO& io = ImGui::GetIO(); (void)io;
+    ImGuiIO& io = ImGui::GetIO(); io.FontGlobalScale = 3.5f; (void)io;
     ImGui::StyleColorsDark();
     ImGui_ImplGlfw_InitForOpenGL(window, true);
     ImGui_ImplOpenGL3_Init("#version 330");
 
 	bool bDrawTriangle = true;
 
+	float size = 1.0f;
+
+
     while (!glfwWindowShouldClose(window)) 
     {
         processInput(window);
+
+        camera.Inputs(window);
 
 		ImGui_ImplOpenGL3_NewFrame();
 		ImGui_ImplGlfw_NewFrame();
 		ImGui::NewFrame();
 
+		renderer.setScale(size);
+
         if (bDrawTriangle) glDrawArrays(GL_TRIANGLES, 0, 3);
         ImGui::Begin("Did it work?");
-        ImGui::Text("Hello, ImGui!");
-		ImGui::Checkbox("Demo Window", &bDrawTriangle);
+        ImGui::Text("Cube scale");
+		//ImGui::Checkbox("drawTriangle", &bDrawTriangle);
+        ImGui::SliderFloat("Size", &size, 0.5f, 2.0f);
         ImGui::End();
       
+        camera.Matrix(45.0f, 0.1f, 100.0f, *renderer.mainShader, "cameraMatrix");
+
 		renderer.render();
 
         ImGui::Render();
@@ -94,7 +107,7 @@ void Application::Run()
 		glfwPollEvents();
 
     }
-
+    
 	ImGui_ImplOpenGL3_Shutdown();
 	ImGui_ImplGlfw_Shutdown();
     ImGui:: DestroyContext();

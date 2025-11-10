@@ -139,6 +139,7 @@ void Renderer::render()
     glBindTexture(GL_TEXTURE_2D, texture1);
 
     glm::mat4 model = glm::rotate(glm::mat4(1.0f), (float)glfwGetTime(), glm::vec3(0.5f, 1.0f, 0.0f));
+    model = glm::scale(model, glm::vec3(uiScale)); // apply UI scale
     glm::mat4 view = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, -3.0f));
     glm::mat4 projection = glm::perspective(glm::radians(45.0f),
         (float)SCR_WIDTH / (float)SCR_HEIGHT,
@@ -178,4 +179,9 @@ void Renderer::render()
             std::cout << "Framebuffer ID: " << framebuffer << ", Texture ID: " << texColorBuffer << std::endl;
         }
     }
+}
+
+void Renderer::setScale(float cubeScale)
+{
+	uiScale = cubeScale;
 }

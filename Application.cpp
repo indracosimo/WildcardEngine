@@ -8,6 +8,7 @@
 #include "Input.h"
 #include <iostream>
 #include "Camera.h"
+#include <vector>
 
 
 Application::Application(int width, int height, const char* title)
@@ -15,7 +16,8 @@ Application::Application(int width, int height, const char* title)
 {
     initGLFW();
     window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "OpenGL App", NULL, NULL);
-    if (!window) {
+    if (!window)
+    {
         std::cerr << "Failed to create window\n";
         glfwTerminate();
         exit(-1);
@@ -64,51 +66,120 @@ void Application::Run()
 {
     Camera camera(SCR_WIDTH, SCR_HEIGHT, glm::vec3(0.0f, 0.0f, 2.0f));
     Renderer renderer(SCR_WIDTH, SCR_HEIGHT);
+    
     //ImGUI setup
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
-    ImGuiIO& io = ImGui::GetIO(); io.FontGlobalScale = 3.5f; (void)io;
+    ImGuiIO& io = ImGui::GetIO(); io.FontGlobalScale = 1.0f; (void)io;
     ImGui::StyleColorsDark();
     ImGui_ImplGlfw_InitForOpenGL(window, true);
     ImGui_ImplOpenGL3_Init("#version 330");
 
-	bool bDrawTriangle = true;
+	// bool bDrawTriangle = true;
+    std::vector<CubeTransform> cubes;
+    CubeTransform newCubeTransform;
+    int selectedCubeIndex = -1;
+    
+	// float size = 1.0f;
 
-	float size = 1.0f;
 
-
-    while (!glfwWindowShouldClose(window)) 
+ while (!glfwWindowShouldClose(window)) 
     {
         processInput(window);
-
         camera.Inputs(window);
 
-		ImGui_ImplOpenGL3_NewFrame();
-		ImGui_ImplGlfw_NewFrame();
-		ImGui::NewFrame();
+        ImGui_ImplOpenGL3_NewFrame();
+        ImGui_ImplGlfw_NewFrame();
+        ImGui::NewFrame();
+     
+        ImGui::Begin("Cube Controls");
+        ImGui::Text("Total Cubes: %d", (int)cubes.size());
+        ImGui::Separator();
+     
+        ImGui::Text("New Cube Transform:");
+        ImGui::DragFloat3("Position##new", &newCubeTransform.position.x, 0.1f, -10.0f, 10.0f);
+        ImGui::DragFloat3("Rotation##new", &newCubeTransform.rotation.x, 1.0f, 0.0f, 360.0f);
+        ImGui::DragFloat3("Scale##new", &newCubeTransform.scale.x, 0.1f, 0.1f, 10.0f);
+        
+        if (ImGui::Button("Spawn Cube"))
+        {
+            cubes.push_back(newCubeTransform);
+            selectedCubeIndex = cubes.size() - 1;
+        }
+     
+         if (ImGui::Button("Reset Cube##new"))
+        {
+            newCubeTransform.position = {0.0f, 0.0f, 0.0f};
+            newCubeTransform.rotation = {0.0f, 0.0f, 0.0f};
+            newCubeTransform.scale = {1.0f, 1.0f, 1.0f};
+        }
+     
+        
+        ImGui::Separator();
+     
+        if (!cubes.empty())
+        {
+            ImGui::Text("Edit Existing Cubes:");
+            
+            if (ImGui::BeginCombo("Select Cube", selectedCubeIndex >= 0 ? 
+                ("Cube " + std::to_string(selectedCubeIndex)).c_str() : "None"))
+            {
+                for (int i = 0; i < cubes.size(); i++)
+                {
+                    bool isSelected = (selectedCubeIndex == i);
+                    if (ImGui::Selectable(("Cube " + std::to_string(i)).c_str(), isSelected))
+                        selectedCubeIndex = i;
+                    if (isSelected)
+                        ImGui::SetItemDefaultFocus();
+                }
+                ImGui::EndCombo();
+            }
+            
+            if (selectedCubeIndex >= 0 && selectedCubeIndex < cubes.size())
+            {
+                CubeTransform& cube = cubes[selectedCubeIndex];
+                
+                ImGui::Text("Cube %d Transform:", selectedCubeIndex);
+                ImGui::DragFloat3("Position", &cube.position.x, 0.1f, -10.0f, 10.0f);
+                ImGui::DragFloat3("Rotation", &cube.rotation.x, 1.0f, 0.0f, 360.0f);
+                ImGui::DragFloat3("Scale", &cube.scale.x, 0.1f, 0.1f, 10.0f);
 
-		renderer.setScale(size);
-
-        if (bDrawTriangle) glDrawArrays(GL_TRIANGLES, 0, 3);
-        ImGui::Begin("Did it work?");
-        ImGui::Text("Cube scale");
-		//ImGui::Checkbox("drawTriangle", &bDrawTriangle);
-        ImGui::SliderFloat("Size", &size, 0.5f, 2.0f);
+                if (ImGui::Button("Reset Cube"))
+                {
+                    cube.position = {0.0f, 0.0f, 0.0f};
+                    cube.rotation = {0.0f, 0.0f, 0.0f};
+                    cube.scale = {1.0f, 1.0f, 1.0f};
+                }
+                
+                if (ImGui::Button("Delete Cube"))
+                {
+                    cubes.erase(cubes.begin() + selectedCubeIndex);
+                    selectedCubeIndex = -1;
+                }
+            }
+        }
+        
+        if (ImGui::Button("Clear All Cubes"))
+        {
+            cubes.clear();
+            selectedCubeIndex = -1;
+        }
+        
         ImGui::End();
-      
+     
+        renderer.mainShader->use();
+     
         camera.Matrix(45.0f, 0.1f, 100.0f, *renderer.mainShader, "cameraMatrix");
-
-		renderer.render();
+        renderer.render(cubes);
 
         ImGui::Render();
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
         glfwSwapBuffers(window);
-		glfwPollEvents();
-
+        glfwPollEvents();
     }
     
-	ImGui_ImplOpenGL3_Shutdown();
-	ImGui_ImplGlfw_Shutdown();
-    ImGui:: DestroyContext();
+    ImGui_ImplOpenGL3_Shutdown();
+    ImGui_ImplGlfw_Shutdown();
+    ImGui::DestroyContext();
 }

@@ -120,7 +120,7 @@ void Renderer::loadTextures()
     texture1 = loadTexture("images/concrete.jpg");
 }
 
-void Renderer::render()
+void Renderer::render(const std::vector<CubeTransform>& cubes)
 {
     if (bEnableCRT)
         glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
@@ -138,19 +138,36 @@ void Renderer::render()
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture1);
 
-    glm::mat4 model = glm::rotate(glm::mat4(1.0f), (float)glfwGetTime(), glm::vec3(0.5f, 1.0f, 0.0f));
-    model = glm::scale(model, glm::vec3(uiScale)); // apply UI scale
-    glm::mat4 view = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, -3.0f));
-    glm::mat4 projection = glm::perspective(glm::radians(45.0f),
-        (float)SCR_WIDTH / (float)SCR_HEIGHT,
-        0.1f, 100.0f);
-
-    mainShader->setMat4("model", model);
-    mainShader->setMat4("view", view);
-    mainShader->setMat4("projection", projection);
-
     glBindVertexArray(VAO);
-    glDrawArrays(GL_TRIANGLES, 0, 36);
+
+    for (const auto& cube : cubes)
+    {
+        glm::mat4 model = glm::mat4(1.0f);
+
+        //transformations
+        model = glm::translate(model, cube.position);
+        model = glm::rotate(model, glm::radians(cube.rotation.x), glm::vec3(1.0f, 0.0f, 0.0f));
+        model = glm::rotate(model, glm::radians(cube.rotation.y), glm::vec3(0.0f, 1.0f, 0.0f));
+        model = glm::rotate(model, glm::radians(cube.rotation.z), glm::vec3(0.0f, 0.0f, 1.0f));
+        model = glm::scale(model, cube.scale);
+
+        mainShader->setMat4("model", model);
+        glDrawArrays(GL_TRIANGLES, 0, 36);
+    }
+    // glm::mat4 model = glm::rotate(glm::mat4(1.0f), (float)glfwGetTime(), glm::vec3(0.5f, 1.0f, 0.0f));
+    // model = glm::scale(model, glm::vec3(uiScale)); // apply UI scale
+    // glm::mat4 view = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, -3.0f));
+    // glm::mat4 projection = glm::perspective(glm::radians(45.0f),
+    //     (float)SCR_WIDTH / (float)SCR_HEIGHT,
+    //     0.1f, 100.0f);
+
+    // mainShader->setMat4("model", model);
+    // mainShader->setMat4("view", view);
+    // mainShader->setMat4("projection", projection);
+
+
+    // glDrawArrays(GL_TRIANGLES, 0, 36);
+    
     glBindVertexArray(0); 
 
     // 3️⃣ CRT post-process
@@ -181,7 +198,7 @@ void Renderer::render()
     }
 }
 
-void Renderer::setScale(float cubeScale)
-{
-	uiScale = cubeScale;
-}
+// void Renderer::setScale(float cubeScale)
+// {
+// 	uiScale = cubeScale;
+// }

@@ -1,15 +1,25 @@
 #pragma once
 #include "shader.h"
+#include <glm/glm.hpp>
+#include <vector>
+
+struct CubeTransform
+{
+	glm::vec3 position = glm::vec3(0.0f, 0.0f, 0.0f);
+	glm::vec3 rotation = glm::vec3(0.0f, 0.0f, 0.0f);
+	glm::vec3 scale = glm::vec3(1.0f, 1.0f, 1.0f);
+};
+
 class Renderer
 {
 public:
 	Renderer(unsigned int width, unsigned int height);
 	~Renderer();
-	void render();
+	void render(const std::vector<CubeTransform>& cubes);
 	Shader* mainShader = nullptr;
 	Shader* crtShader = nullptr;
 	//imgui scale control
-	void setScale(float cubeScale);
+	// void setScale(float cubeScale);
 
 private:
 	unsigned int SCR_WIDTH, SCR_HEIGHT;
@@ -22,6 +32,6 @@ private:
 	void loadTextures();
 
 	//ui controlled scale
-	float uiScale = 1.0;
+	// float uiScale = 1.0;
 };
 

@@ -15,8 +15,8 @@ Renderer::Renderer(unsigned int width, unsigned int height)
     std::cout << "Initial GL error: " << err << std::endl;
     
     glEnable(GL_DEPTH_TEST);
-    mainShader = new Shader("vertexShader.vs", "fragmentShader.fs");
-    crtShader = new Shader("screenShader.vs", "crtShader.fs");
+    mainShader = new Shader("src/vertexShader.vs", "src/fragmentShader.fs");
+    crtShader = new Shader("src/screenShader.vs", "src/crtShader.fs");
     setupCube();
     setupQuad();
     setupFramebuffer();

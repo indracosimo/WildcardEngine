@@ -1,9 +1,9 @@
-﻿#include "Renderer.h"
+﻿#include "Geometry.h"
+#include "Renderer.h"
 #include "TextureLoader.h"
-#include "Geometry.h"
+#include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
-#include <GLFW/glfw3.h>
 
 extern bool bEnableCRT;
 

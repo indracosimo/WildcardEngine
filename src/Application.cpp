@@ -1,15 +1,15 @@
 #define GLM_ENABLE_EXPERIMENTAL
-#include "imgui.h"
-#include "imgui_impl_glfw.h"
 #include <glad/glad.h>
 #include "Application.h"
-#include "Renderer.h"
-#include "Input.h"
-#include <iostream>
 #include "Camera.h"
+#include "imgui.h"
+#include "imgui_impl_glfw.h"
+#include "Input.h"
+#include "Renderer.h"
+#include "UIManager.h"
+#include <iostream>
 #include <vector>
 
-#include "UIManager.h"
 
 
 Application::Application(int width, int height, const char* title)

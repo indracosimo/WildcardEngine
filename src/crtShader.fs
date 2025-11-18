@@ -227,3 +227,75 @@ void main()
 
     FragColor = vec4(ToSrgb(color), 1.0);
 }
+//////////////////////////////////////////////////////////////////////////////
+//#version 330 core
+//out vec4 FragColor;
+//in vec2 TexCoord;
+
+//uniform sampler2D iChannel0;
+//uniform vec2 iResolution;
+//uniform float iTime;
+
+//// cheap params
+//const float SCAN_INTENSITY = 0.08;
+//const float MASK_DARK = 0.6;
+//const float MASK_LIGHT = 1.3;
+//const float GLOW_STRENGTH = 0.12;
+
+
+//vec3 blurSample(vec2 uv, vec2 texelSize)
+//{
+//    vec3 color = texture(iChannel0, uv).rgb * 0.36;
+//    color += texture(iChannel0, uv + vec2(texelSize.x * 1.0, 0.0)).rgb * 0.12;
+//    color += texture(iChannel0, uv + vec2(-texelSize.x * 1.0, 0.0)).rgb * 0.12;
+//    color += texture(iChannel0, uv + vec2(0.0, texelSize.y * 1.0)).rgb * 0.12;
+//    color += texture(iChannel0, uv + vec2(0.0, -texelSize.y * 1.0)).rgb * 0.12;
+//    color += texture(iChannel0, uv + vec2(texelSize.x * 2.0, 0.0)).rgb * 0.04;
+//    color += texture(iChannel0, uv + vec2(-texelSize.x * 2.0, 0.0)).rgb * 0.04;
+//    color += texture(iChannel0, uv + vec2(0.0, texelSize.y * 2.0)).rgb * 0.04;
+//    color += texture(iChannel0, uv + vec2(0.0, -texelSize.y * 2.0)).rgb * 0.04;
+//    return color;
+//}
+
+//float scanlineFactor(float y)
+//{
+//    float pos = y * iResolution.y;
+//    float s = sin(pos * 1.5 + iTime * 2.0);
+//    return 1.0 - SCAN_INTENSITY * (0.5 + 0.5 * s);
+//}
+
+//vec3 colorMask(vec2 fragCoord)
+//{
+//    float xmod = mod(fragCoord.x + fragCoord.y * 0.5, 6.0) / 6.0;
+//    vec3 mask = vec3(MASK_DARK);
+//    if (xmod < 0.333) mask.r = MASK_LIGHT;
+//    else if (xmod < 0.666) mask.g = MASK_LIGHT;
+//    else mask.b = MASK_LIGHT;
+//    return mask;
+//}
+
+//vec3 cheapGlow(vec2 uv, vec2 texelSize)
+//{
+//    vec3 c = vec3(0.0);
+//    c += texture(iChannel0, uv + vec2(texelSize.x, 0.0)).rgb;
+//    c += texture(iChannel0, uv + vec2(-texelSize.x, 0.0)).rgb;
+//    c += texture(iChannel0, uv + vec2(0.0, texelSize.y)).rgb;
+//    c += texture(iChannel0, uv + vec2(0.0, -texelSize.y)).rgb;
+//    return c * (GLOW_STRENGTH * 0.25);
+//}
+
+//void main()
+//{
+//    vec2 uv = gl_FragCoord.xy / iResolution.xy;
+//    vec2 texelSize = 1.0 / iResolution;
+
+//    vec3 base = blurSample(uv, texelSize);
+//    vec3 glow = cheapGlow(uv, texelSize);
+//    vec3 color = mix(base, base + glow, 0.25);
+
+//    float scan = scanlineFactor(gl_FragCoord.y / iResolution.y);
+//    color *= scan;
+//    color *= colorMask(gl_FragCoord.xy);
+
+//    FragColor = vec4(color, 1.0);
+//}

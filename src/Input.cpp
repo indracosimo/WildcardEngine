@@ -36,7 +36,7 @@ void processInput(GLFWwindow* window)
     }
 }
 
-void Camera::Inputs(GLFWwindow* window, float deltaTime)
+void Camera::Inputs(GLFWwindow* window)
 {
     //Lets you use the imgui window when clicking on it, without firing the camera controls
     ImGuiIO& io = ImGui::GetIO();
@@ -44,58 +44,55 @@ void Camera::Inputs(GLFWwindow* window, float deltaTime)
     {
         return;
     }
-
-    float frameSpeed = speed;
-    if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS)
-    frameSpeed *= sprintMultiplier;
     
     if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) 
     {
-		Position += frameSpeed * deltaTime * Orientation;
+		Position += speed * Orientation;
         std::cout << "w pressed" << std::endl;
     }
 
     if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
     {
-        Position += frameSpeed * deltaTime * -glm::normalize(glm::cross(Orientation, Up));
+        Position += speed * -glm::normalize(glm::cross(Orientation, Up));
         std::cout << "a pressed" << std::endl;
     }
 
     if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
     {
-        Position += frameSpeed * deltaTime * -Orientation;
+        Position += speed * -Orientation;
         std::cout << "s pressed" << std::endl;
     }
 
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
     {
-        Position += frameSpeed * deltaTime * glm::normalize(glm::cross(Orientation, Up));
+        Position += speed * glm::normalize(glm::cross(Orientation, Up));
         std::cout << "d pressed" << std::endl;
     }
 
     if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
     {
-        Position += frameSpeed * deltaTime * Up;
+        Position += speed * Up;
 		std::cout << "SPACE PRESSED" << std::endl;
     }
 
     if (glfwGetKey(window, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS)
     {
-        Position += frameSpeed * deltaTime * -Up;
+        Position += speed * -Up;
     }
 
     if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS)
     {
-        frameSpeed = 0.3f;
+        speed = 0.3f;
     }
 
     if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_RELEASE)
     {
-        frameSpeed = 0.1f;
+        speed = 0.1f;
     }
 
     if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS)
     {
+        // Hides mouse cursor
         glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
 
         // Prevents camera from jumping on the first click
@@ -105,9 +102,11 @@ void Camera::Inputs(GLFWwindow* window, float deltaTime)
             bFirstClick = false;
         }
 
+        // Stores the coordinates of the cursor
         double mouseX;
         double mouseY;
         
+        // Fetches the coordinates of the cursor
         glfwGetCursorPos(window, &mouseX, &mouseY);
 
         // Normalizes and shifts the coordinates of the cursor such that they begin in the middle of the screen
@@ -124,6 +123,7 @@ void Camera::Inputs(GLFWwindow* window, float deltaTime)
             Orientation = newOrientation;
         }
 
+        // Rotates the Orientation left and right
         Orientation = glm::rotate(Orientation, glm::radians(-rotY), Up);
 
         // Sets mouse cursor to the middle of the screen so that it doesn't end up roaming around
@@ -131,6 +131,7 @@ void Camera::Inputs(GLFWwindow* window, float deltaTime)
     }
     else if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_RELEASE)
     {
+        // Unhides cursor since camera is not looking around anymore
         glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
         // Makes sure the next time the camera looks around it doesn't jump
         bFirstClick = true;

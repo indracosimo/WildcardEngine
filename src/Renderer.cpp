@@ -10,11 +10,11 @@ extern bool bEnableCRT;
 Renderer::Renderer(unsigned int width, unsigned int height)
     : SCR_WIDTH(width), SCR_HEIGHT(height)
 {
+    // Check if OpenGL context is valid
     GLenum err = glGetError();
     std::cout << "Initial GL error: " << err << std::endl;
     
     glEnable(GL_DEPTH_TEST);
-    //glEnable(GL_FRAMEBUFFER_SRGB);
     mainShader = new Shader("src/vertexShader.vs", "src/fragmentShader.fs");
     crtShader = new Shader("src/screenShader.vs", "src/crtShader.fs");
     setupCube();
@@ -22,6 +22,7 @@ Renderer::Renderer(unsigned int width, unsigned int height)
     setupFramebuffer();
     loadTextures();
     
+    // Debug: Check texture IDs
     std::cout << "texColorBuffer ID: " << texColorBuffer << std::endl;
     std::cout << "texture1 ID: " << texture1 << std::endl;
 }
@@ -107,8 +108,7 @@ void Renderer::setupFramebuffer()
         std::cout << "Framebuffer is complete!" << std::endl;
 
     GLenum err = glGetError();
-    if (err != GL_NO_ERROR)
-    {
+    if (err != GL_NO_ERROR) {
         std::cout << "OpenGL Error in setupFramebuffer: " << err << std::endl;
     }
 
@@ -143,9 +143,6 @@ void Renderer::render(const std::vector<CubeTransform>& cubes)
     for (const auto& cube : cubes)
     {
         glm::mat4 model = glm::mat4(1.0f);
-        glm::mat4 projection = glm::perspective(glm::radians(45.0f),
-            (float)SCR_WIDTH / (float)SCR_HEIGHT,
-            0.1f, 9999.0f);
 
         //transformations
         model = glm::translate(model, cube.position);
@@ -154,20 +151,19 @@ void Renderer::render(const std::vector<CubeTransform>& cubes)
         model = glm::rotate(model, glm::radians(cube.rotation.z), glm::vec3(0.0f, 0.0f, 1.0f));
         model = glm::scale(model, cube.scale);
 
-        mainShader->setMat4("projection", projection);
         mainShader->setMat4("model", model);
         glDrawArrays(GL_TRIANGLES, 0, 36);
     }
     // glm::mat4 model = glm::rotate(glm::mat4(1.0f), (float)glfwGetTime(), glm::vec3(0.5f, 1.0f, 0.0f));
     // model = glm::scale(model, glm::vec3(uiScale)); // apply UI scale
     // glm::mat4 view = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, -3.0f));
-     //glm::mat4 projection = glm::perspective(glm::radians(45.0f),
-     //    (float)SCR_WIDTH / (float)SCR_HEIGHT,
-     //    0.1f, 9999.0f);
+    // glm::mat4 projection = glm::perspective(glm::radians(45.0f),
+    //     (float)SCR_WIDTH / (float)SCR_HEIGHT,
+    //     0.1f, 100.0f);
 
     // mainShader->setMat4("model", model);
     // mainShader->setMat4("view", view);
-
+    // mainShader->setMat4("projection", projection);
 
 
     // glDrawArrays(GL_TRIANGLES, 0, 36);
@@ -182,11 +178,6 @@ void Renderer::render(const std::vector<CubeTransform>& cubes)
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
-        // Create a timer query to measure GPU time for the CRT pass
-        GLuint timeQuery = 0;
-        glGenQueries(1, &timeQuery);
-        glBeginQuery(GL_TIME_ELAPSED, timeQuery);
-
         crtShader->use();
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D, texColorBuffer);
@@ -200,16 +191,8 @@ void Renderer::render(const std::vector<CubeTransform>& cubes)
         glBindVertexArray(quadVAO);
         glDrawArrays(GL_TRIANGLES, 0, 6);
         glBindVertexArray(0);
-        glEndQuery(GL_TIME_ELAPSED);
 
-        GLuint64 elapsedNano = 0;
-        glGetQueryObjectui64v(timeQuery, GL_QUERY_RESULT, &elapsedNano);
-        double elapsedMs = double(elapsedNano) / 1e6;
-        std::cout << "CRT pass GPU ms: " << elapsedMs << std::endl;
-
-        glDeleteQueries(1, &timeQuery);
-        if (bEnableCRT) 
-        {
+        if (bEnableCRT) {
             std::cout << "Framebuffer ID: " << framebuffer << ", Texture ID: " << texColorBuffer << std::endl;
         }
     }

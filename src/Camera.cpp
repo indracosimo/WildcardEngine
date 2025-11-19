@@ -1,6 +1,5 @@
 #define GLM_ENABLE_EXPERIMENTAL
 #include "Camera.h"
-#include "imgui.h"
 
 glm::mat4 Camera::GetViewMatrix() const
 {

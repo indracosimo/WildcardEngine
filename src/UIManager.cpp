@@ -7,7 +7,6 @@
 
 UIManager::UIManager()
 {
-    return;
 }
 
 UIManager::~UIManager()
@@ -23,7 +22,7 @@ void UIManager::Initialize(GLFWwindow* window)
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
     ImGuiIO& io = ImGui::GetIO();
-    io.FontGlobalScale = 2.5f;
+    io.FontGlobalScale = 1.0f;
     (void)io;
     ImGui::StyleColorsDark();
     ImGui_ImplGlfw_InitForOpenGL(window, true);
@@ -57,7 +56,7 @@ void UIManager::EndFrame()
 void UIManager::RenderCubeControls(std::vector<CubeTransform>& cubes, int& selectedCubeIndex,
     CubeTransform& newCubeTransform)
 {
-        ImGui::Begin("Cube Controls");
+            ImGui::Begin("Cube Controls");
         ImGui::Text("Total Cubes: %d", static_cast<int>(cubes.size()));
         ImGui::Separator();
      
@@ -69,15 +68,8 @@ void UIManager::RenderCubeControls(std::vector<CubeTransform>& cubes, int& selec
         
         if (ImGui::Button("Spawn Cube"))
         {
-            if (newCubeTransform.name.empty() || newCubeTransform.name == "Nameless Cube" || newCubeTransform.name.rfind("Nameless Cube", 0) == 0)
-            {
-                newCubeTransform.name = "Nameless Cube " + std::to_string(cubes.size());
-            }
-
             cubes.push_back(newCubeTransform);
-            selectedCubeIndex = static_cast<int>(cubes.size()) - 1;
-
-            newCubeTransform.name = "Nameless Cube";
+            selectedCubeIndex = cubes.size() - 1;
         }
      
          if (ImGui::Button("Reset Cube##new"))
@@ -85,7 +77,6 @@ void UIManager::RenderCubeControls(std::vector<CubeTransform>& cubes, int& selec
             newCubeTransform.position = {0.0f, 0.0f, 0.0f};
             newCubeTransform.rotation = {0.0f, 0.0f, 0.0f};
             newCubeTransform.scale = {1.0f, 1.0f, 1.0f};
-            newCubeTransform.name = "Nameless Cube";
         }
      
         
@@ -96,12 +87,12 @@ void UIManager::RenderCubeControls(std::vector<CubeTransform>& cubes, int& selec
             ImGui::Text("Edit Existing Cubes:");
             
             if (ImGui::BeginCombo("Select Cube", selectedCubeIndex >= 0 ? 
-                cubes[selectedCubeIndex].name.c_str() : "None"))
+                ("Cube " + std::to_string(selectedCubeIndex)).c_str() : "None"))
             {
                 for (int i = 0; i < cubes.size(); i++)
                 {
                     bool isSelected = (selectedCubeIndex == i);
-                    if (ImGui::Selectable(cubes[i].name.c_str(), isSelected))
+                    if (ImGui::Selectable(("Cube " + std::to_string(i)).c_str(), isSelected))
                         selectedCubeIndex = i;
                     if (isSelected)
                         ImGui::SetItemDefaultFocus();
@@ -112,17 +103,9 @@ void UIManager::RenderCubeControls(std::vector<CubeTransform>& cubes, int& selec
             if (selectedCubeIndex >= 0 && selectedCubeIndex < cubes.size())
             {
                 CubeTransform& cube = cubes[selectedCubeIndex];
-                std::vector<char> cubeNameBuffer(cube.name.begin(), cube.name.end());
-                cubeNameBuffer.resize(256);
-
-                ImGui::Text("Cube %d Transform:", selectedCubeIndex, cubeNameBuffer.data());
+                
+                ImGui::Text("Cube %d Transform:", selectedCubeIndex);
                 ImGui::Text("       x                y                z        ");
-
-
-                if (ImGui::InputText("Cube Name", cubeNameBuffer.data(), cubeNameBuffer.size())) 
-                {
-                    cube.name = std::string(cubeNameBuffer.data()); // Update std::string after editing
-                }
                 ImGui::DragFloat3("Position", &cube.position.x, 0.1f, -10.0f, 999.0f);
                 ImGui::DragFloat3("Rotation", &cube.rotation.x, 1.0f, 0.0f, 360.0f);
                 ImGui::DragFloat3("Scale", &cube.scale.x, 0.1f, 0.1f, 999.0f);
@@ -138,17 +121,11 @@ void UIManager::RenderCubeControls(std::vector<CubeTransform>& cubes, int& selec
                 {
                     cubes.erase(cubes.begin() + selectedCubeIndex);
                     selectedCubeIndex = -1;
-
-                    for (int j = 0; j < (int)cubes.size(); ++j)
-                    {
-                        if (cubes[j].name.rfind("Nameless Cube", 0) == 0)
-                            cubes[j].name = "Nameless Cube " + std::to_string(j);
-                    }
                 }
             }
         }
         
-        if (ImGui::Button("Delete All Cubes"))
+        if (ImGui::Button("Clear All Cubes"))
         {
             cubes.clear();
             selectedCubeIndex = -1;

@@ -5,8 +5,6 @@
 struct ImGuiIO;
 struct GLFWwindow;
 
-
-
 class UIManager
 {
 public:

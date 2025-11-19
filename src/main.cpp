@@ -3,7 +3,7 @@
 
 int main() 
 {
-	Application app(1920, 1080, "OpenGL App");
+	Application app(Application::width4K, Application::height4K, "OpenGL App");
 	app.Run();
 	return 0;
 }

@@ -25,7 +25,7 @@ Application::Application(int width, int height, const char* title)
         exit(-1);
     }
     glfwMakeContextCurrent(window);
-    //glfwSwapInterval(1);
+    glfwSwapInterval(1);
     initGLAD();
     setupCallbacks();
 }
